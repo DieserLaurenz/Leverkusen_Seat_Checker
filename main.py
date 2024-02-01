@@ -81,7 +81,7 @@ def check_seats():
                         send_telegram_message(bot_token, chat_id, message, 'Markdown')
                         time.sleep(2)
                 elif status_code == 502:
-                    pass
+                    print(status_code)
                 else:
                     print(f"Unexpected status code: {status_code}")
                     print(response.text)
