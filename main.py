@@ -16,7 +16,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from seleniumbase import Driver
 
 # Konstantendefinitionen
-REQUEST_DELAY = 10
+REQUEST_DELAY = 5
 bot_token = "6602448853:AAFVqBmsIes9h0cC3YINOVIGxWiBrLBjDmo"
 chat_id = "-4153744196"
 product_id = 20123412
