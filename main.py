@@ -26,11 +26,31 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'
 }
 
+cookie = {
+    "domain": "www.bayer04.de",
+    "expirationDate": 1706880148.492309,
+    "hostOnly": True,
+    "httpOnly": False,
+    "name": "QueueITAccepted-SDFrts345E-V3_b04tickets20240131",
+    "path": "/",
+    "sameSite": "unspecified",
+    "secure": False,
+    "session": False,
+    "storeId": "0",
+    "value": "EventId%3Db04tickets20240131%26QueueId%3D889acef0-cebc-4d6b-aab7-478ba44b4912%26RedirectType%3Dsafetynet%26IssueTime%3D1706793748%26Hash%3D3b6916767a2e0074f8972a10e34f707f1316be1b5c50ad08c5c2f192c6c22747",
+    "id": 8
+}
+
 # Session-Initialisierung
 session = tls_client.Session(
     client_identifier="chrome_112",
-    random_tls_extension_order=True
+    random_tls_extension_order=True,
 )
+
+session.cookies.set(**cookie)
+
+print(session.cookies.values())
+
 
 
 # Funktionsdefinitionen
@@ -67,6 +87,8 @@ def check_seats():
                         message = f"Seat found for event {event_id} and block {block}. Seat\\_ID: {seat_id}\n [Checkout Link](https://www.bayer04.de/de-de/shop/product/{product_id})"
                         send_telegram_message(bot_token, chat_id, message, 'Markdown')
                         time.sleep(2)
+                elif status_code == 502:
+                    pass
                 else:
                     print(f"Unexpected status code: {status_code}")
                     print(response.text)
