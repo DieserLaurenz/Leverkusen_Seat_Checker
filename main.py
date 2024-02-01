@@ -226,7 +226,7 @@ def check_seats():
                         for seat_id in category["globalSeats"]:
                             print(f"Seat found for event {event_id} and block {block_id}. Seat_ID: {seat_id}")
                             message = f"Seat found for event {event_id} and block {block_id}. Seat_ID: {seat_id}\n [Checkout Link](https://www.bayer04.de/de-de/shop/product/{product_id})"
-                            #send_telegram_message(bot_token, chat_id, message, 'Markdown')
+                            send_telegram_message(bot_token, chat_id, message, 'Markdown')
                             time.sleep(2)
             elif status_code == 502:
                 print(f"Status code: {status_code}")
