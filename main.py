@@ -49,27 +49,35 @@ def check_seats():
     """
     Überprüft verfügbare Sitze für ein Event und benachrichtigt über Telegram.
     """
+
     while True:
-        for block in blocks:
-            response = session.get(f'https://tss-al.bayer04.de/api/private/seats/{event_id}/{block}', headers=headers)
-            status_code = response.status_code
+        try:
+            for block in blocks:
+                response = session.get(f'https://tss-al.bayer04.de/api/private/seats/{event_id}/{block}', headers=headers)
+                status_code = response.status_code
 
-            if status_code == 404:
-                print(f"No Seats found for event {event_id} and block {block}")
-            elif status_code == 200:
-                response_data = json.loads(response.text)
-                seat_ids = [seat["id"] for category in response_data[0]["category"] for seat in category["seats"]]
+                if status_code == 404:
+                    print(f"No Seats found for event {event_id} and block {block}")
+                elif status_code == 200:
+                    response_data = json.loads(response.text)
+                    seat_ids = [seat["id"] for category in response_data[0]["category"] for seat in category["seats"]]
 
-                for seat_id in seat_ids:
-                    print(f"Seat found for event {event_id} and block {block}. Seat_ID: {seat_id}")
-                    message = f"Seat found for event {event_id} and block {block}. Seat\\_ID: {seat_id}\n [Checkout Link](https://www.bayer04.de/de-de/shop/product/{product_id})"
-                    send_telegram_message(bot_token, chat_id, message, 'Markdown')
-                    time.sleep(2)
-            else:
-                print(f"Unexpected status code: {status_code}")
-            time.sleep(0.1)
-        print("Request delay..")
-        time.sleep(REQUEST_DELAY)
+                    for seat_id in seat_ids:
+                        print(f"Seat found for event {event_id} and block {block}. Seat_ID: {seat_id}")
+                        message = f"Seat found for event {event_id} and block {block}. Seat\\_ID: {seat_id}\n [Checkout Link](https://www.bayer04.de/de-de/shop/product/{product_id})"
+                        send_telegram_message(bot_token, chat_id, message, 'Markdown')
+                        time.sleep(2)
+                else:
+                    print(f"Unexpected status code: {status_code}")
+                    print(response.text)
+                    send_telegram_message(bot_token, chat_id, f"Unexpected status code: {status_code}. Laurenz kontaktieren", 'Markdown')
+                    time.sleep(6000)
+                time.sleep(0.1)
+            print("Request delay..")
+            time.sleep(REQUEST_DELAY)
+        except:
+            time.sleep(1)
+            continue
 
 
 # Hauptfunktionaufruf
