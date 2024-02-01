@@ -2,7 +2,6 @@
 import json
 import time
 import requests
-import tls_client
 
 # Konstantendefinitionen
 REQUEST_DELAY = 10
@@ -42,10 +41,7 @@ cookie = {
 }
 
 # Session-Initialisierung
-session = tls_client.Session(
-    client_identifier="chrome_112",
-    random_tls_extension_order=True,
-)
+session = requests.Session()
 
 session.cookies.set(**cookie)
 
