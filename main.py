@@ -188,14 +188,30 @@ def check_seats():
     """
 
     headers = {
-        'auth-apf': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzJpc3MiOiJCYXllcjA0IiwiZXhwIjoxNzA2ODMzMDE0LCJpYXQiOjE3MDY3OTcwMTQsImN1c3RvbWVyX2dyb3VwcyI6IlNPTkRFUjIsU09OREVSMSxDTFVCLERLLU0yIiwic2NvcGUiOiIiLCJjb250YWN0X2lkIjoiMTk3YzBmZWEtY2UyMC00N2YxLTkwYTctOTg1MWEwMDI5YmVhIn0.ZGYn5VSY_kCvS0Rjl5sfwsVJu8ov5l0qfiYQxup3q_bh8QDuXc2mKIcIJuPBaWwUK7OXs6-wPeKZtaYZSka44eRjinYleB0VU2W7uX6a9WOHDAUNjYuio0DyOUt2LmsTjvBbp-0EH8-FMmQuqyOH7WxjLwioQtgWyh1gQsioX7SRT7YH5yHj0fPDH751AI4wG6G5YJQDo77_j6SzsYdS6nJXj6sbOzbJoHivOuYm-YWjmaN9IcmdkrsetJeNoikSodt6xhh1a4_n7A69hrsi_IKEKTg86YhhJBq8Ab-orJUL_tj6K4InLJYzLpf4ID-V24cRTqmyuR32ADZuZIWS0c_BDG6Kxic6y7hE0tDIMfEJtwNZ0BAlCRiPmHp4lmXl7Gdw9DU-7ksvSjRGw56uD8CZCktYfk_dYT-O2Bi0kmn1QX1ULcLyCAmAw2k3z6-fh9KKinPZZ6_IjUVHypLGCy7mtAd-3iQqv22XoPJ322WoO1an4cHFrcccgYOJiyhHByH-RY3FImbewnGBDVnZMlQrU0nTaiQL1fFs-YFiwMQUOGTqYreTkCSXUF05d9YBIkg-UK7C428IYByIrP60mDbzyt0AoL2Sb7dpnKP0uKJ6CR-D1uqCkFDgMUX-zf4j3NZay4FtI-Abkg2txr36JblQPDAq_90qKAC0ImQnTOs',
-        'auth-tws': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJJ0d3MiLCJhdWQiOiJ1cm46Y3VzdG9tZXIiLCJpYXQiOjE3MDY3OTkyNDUsImV4cCI6MTcwNjgwMjg0NSwic2Vzc2lvbl9pZCI6IjE2NDMzMDM4ZTI0MTcyYmM5OGVhYzZhNmJkOTNhNiJ9.HDAUcNT-5ur2v_CKJzQHMY4rQJztNI1U_NrGGDfdEEqx_eSdcW_zHvAs-2lpFrAiGwKhhQ3-dMqhFCeENwgw2FlvJNyDVzqULl4f-C07OzgBSpKMEFwuOUfc5OFpjiILJFCnxHkDm3vcBImGol2OItz31ifLhD5FcWMuxhrEZmf_MOSuHAHecL7LK3S5pp84CgI7VMYa-wtbNKakICC_96erI6AHViaJnxW2LUdb0bQMcjr-5jala7CXpAKnrs2rmukDzpS3j76Nh3y9Mou9oz6wfRfDhJ5WWr5LuGE7-WnlgHIgv9HBwN0GWBU5NFLT9JWpsP-6Z49z-TtwbVzkdQ',
+        'auth-apf': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJCYXllcjA0IiwiZXhwIjoxNzA2ODMzMDE0LCJpYXQiOjE3MDY3OTcwMTQsImN1c3RvbWVyX2dyb3VwcyI6IlNPTkRFUjIsU09OREVSMSxDTFVCLERLLU0yIiwic2NvcGUiOiIiLCJjb250YWN0X2lkIjoiMTk3YzBmZWEtY2UyMC00N2YxLTkwYTctOTg1MWEwMDI5YmVhIn0.ZGYn5VSY_kCvS0Rjl5sfwsVJu8ov5l0qfiYQxup3q_bh8QDuXc2mKIcIJuPBaWwUK7OXs6-wPeKZtaYZSka44eRjinYleB0VU2W7uX6a9WOHDAUNjYuio0DyOUt2LmsTjvBbp-0EH8-FMmQuqyOH7WxjLwioQtgWyh1gQsioX7SRT7YH5yHj0fPDH751AI4wG6G5YJQDo77_j6SzsYdS6nJXj6sbOzbJoHivOuYm-YWjmaN9IcmdkrsetJeNoikSodt6xhh1a4_n7A69hrsi_IKEKTg86YhhJBq8Ab-orJUL_tj6K4InLJYzLpf4ID-V24cRTqmyuR32ADZuZIWS0c_BDG6Kxic6y7hE0tDIMfEJtwNZ0BAlCRiPmHp4lmXl7Gdw9DU-7ksvSjRGw56uD8CZCktYfk_dYT-O2Bi0kmn1QX1ULcLyCAmAw2k3z6-fh9KKinPZZ6_IjUVHypLGCy7mtAd-3iQqv22XoPJ322WoO1an4cHFrcccgYOJiyhHByH-RY3FImbewnGBDVnZMlQrU0nTaiQL1fFs-YFiwMQUOGTqYreTkCSXUF05d9YBIkg-UK7C428IYByIrP60mDbzyt0AoL2Sb7dpnKP0uKJ6CR-D1uqCkFDgMUX-zf4j3NZay4FtI-Abkg2txr36JblQPDAq_90qKAC0ImQnTOs',
+        'auth-tws': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ0d3MiLCJhdWQiOiJ1cm46Y3VzdG9tZXIiLCJpYXQiOjE3MDY4MDI0OTIsImV4cCI6MTcwNjgwNjA5Miwic2Vzc2lvbl9pZCI6IjE2NDMzMDM4ZTI0MTcyYmM5OGVhYzZhNmJkOTNhNiJ9.eD6hZtMCkdmoP15DniXiuYtbyI_Xyk_BYA4nwQtFmF3dtmNEV22IIK1-mUJBeb5I5xC7y305C_upwHjY4owdm8RgiGfgx7SZ-lEJjYagxGGq5wS1NiGSE4jxDFEdUsOmeOiD1w2Yf9ThLtjClp_msSL-sG0W7uSKaH_99sBBUwdOe8ph4BxOHhNCiLXcmGkicukDB0F3OabYWHohsER0sMyFKm3VcBxXsNSxXG_WWjGMSK66OAl51FFinAtG_867Mx_eR6UDPAwv9uKCtYmGhUyBR7ZTKiSJjc19oY_jYfHK10wp1ZbqZG9DftkuV4ezmSaNe32wBFECmkRnh7-Yxw',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36'
+    }
+
+    options_headers = {
+        'authority': 'tss-al.bayer04.de',
+        'accept': '*/*',
+        'accept-language': 'de-DE,de;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6,es;q=0.5,it;q=0.4,fr;q=0.3',
+        'access-control-request-headers': 'auth-apf,auth-tws',
+        'access-control-request-method': 'GET',
+        'origin': 'https://www.bayer04.de',
+        'referer': 'https://www.bayer04.de/',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
     }
 
     while True:
         try:
             for block in blocks:
+                options_response = session.options(f'https://tss-al.bayer04.de/api/private/seats/{event_id}/{block}', headers=options_headers)
+                print(options_response.status_code)
                 response = session.get(f'https://tss-al.bayer04.de/api/private/seats/{event_id}/{block}',
                                        headers=headers)
                 status_code = response.status_code
