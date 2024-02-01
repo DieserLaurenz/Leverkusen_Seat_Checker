@@ -2,6 +2,7 @@
 import json
 import time
 import requests
+import tls_client
 
 # Konstantendefinitionen
 REQUEST_DELAY = 10
@@ -27,21 +28,17 @@ headers = {
 
 cookie = {
     "domain": "www.bayer04.de",
-    "expirationDate": 1706880148.492309,
-    "hostOnly": True,
-    "httpOnly": False,
     "name": "QueueITAccepted-SDFrts345E-V3_b04tickets20240131",
     "path": "/",
-    "sameSite": "unspecified",
     "secure": False,
-    "session": False,
-    "storeId": "0",
     "value": "EventId%3Db04tickets20240131%26QueueId%3D889acef0-cebc-4d6b-aab7-478ba44b4912%26RedirectType%3Dsafetynet%26IssueTime%3D1706793748%26Hash%3D3b6916767a2e0074f8972a10e34f707f1316be1b5c50ad08c5c2f192c6c22747",
-    "id": 8
 }
 
 # Session-Initialisierung
-session = requests.Session()
+session = tls_client.Session(
+    client_identifier="chrome_112",
+    random_tls_extension_order=True,
+)
 
 session.cookies.set(**cookie)
 
