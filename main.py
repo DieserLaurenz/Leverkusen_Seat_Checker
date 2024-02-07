@@ -21,8 +21,8 @@ bot_token = "6602448853:AAFVqBmsIes9h0cC3YINOVIGxWiBrLBjDmo"
 chat_id = "-4153744196"
 product_id = 20123412
 event_id = 1977  # Bayern Spiel
-username = "freimut51371"
-password = "Nujbop-raxsor-8nyxqa"
+username = None
+password = None
 
 # Es geht auch einfach nur nach event_id fetchen ohne block
 
