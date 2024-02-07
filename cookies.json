@@ -1,41 +1,32 @@
 [
   {
     "domain": "www.bayer04.de",
-    "expiry": 1707383686,
+    "httpOnly": false,
+    "name": "group",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "0e4e09c83a9dfd39b275d3ccb55532eeffb7e666a70151215b4c55c6268d7d72"
+  },
+  {
+    "domain": "www.bayer04.de",
+    "expiry": 1707423734,
     "httpOnly": false,
     "name": "QueueITAccepted-SDFrts345E-V3_b04tickets20240131",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "EventId%3Db04tickets20240131%26QueueId%3D26bffd23-e01c-48ce-a26b-4103f2608b30%26RedirectType%3Dsafetynet%26IssueTime%3D1707297285%26Hash%3D4a5f307a02c47fc2eb5333b81de0526abb728078a6aac129c734ed5eaeb9a119"
-  },
-  {
-    "domain": ".bayer04.de",
-    "httpOnly": false,
-    "name": "wt_rla",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": false,
-    "value": "969665527401678%2C7%2C1707297228474"
+    "value": "EventId%3Db04tickets20240131%26QueueId%3D295f42cf-2177-4f00-a59e-197c9a195cc6%26RedirectType%3Dsafetynet%26IssueTime%3D1707337333%26Hash%3Ddf5a0af7f42d09f845b46e78cd04789363d2ec58020f65ee44cba5903bc346a7"
   },
   {
     "domain": "www.bayer04.de",
-    "expiry": 1738833279,
-    "httpOnly": false,
-    "name": "_pc_vis",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": false,
-    "value": "d0e54bd9dd7d91fb"
-  },
-  {
-    "domain": "www.bayer04.de",
+    "expiry": 1707423657,
     "httpOnly": true,
-    "name": "PHPSESSID",
+    "name": "sessionid",
     "path": "/",
-    "sameSite": "None",
+    "sameSite": "Lax",
     "secure": true,
-    "value": "f5jeceglhlv5bpr7f44q9nshet"
+    "value": "tbh9qwti9quf99ctvczh09mfd13oot5i"
   },
   {
     "domain": ".bayer04.de",
@@ -53,15 +44,34 @@
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "1707297227699"
+    "value": "1707337240293"
   },
   {
     "domain": "www.bayer04.de",
+    "httpOnly": true,
+    "name": "PHPSESSID",
+    "path": "/",
+    "sameSite": "None",
+    "secure": true,
+    "value": "1enm5r3punk3gt5kvc8o828jo7"
+  },
+  {
+    "domain": "www.bayer04.de",
+    "expiry": 1738873259,
     "httpOnly": false,
-    "name": "group",
+    "name": "_pc_vis",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "0e4e09c83a9dfd39b275d3ccb55532eeffb7e666a70151215b4c55c6268d7d72"
+    "value": "426ace5ab5cbfd3f"
+  },
+  {
+    "domain": ".bayer04.de",
+    "httpOnly": false,
+    "name": "wt_rla",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "969665527401678%2C3%2C1707337242834"
   }
 ]
