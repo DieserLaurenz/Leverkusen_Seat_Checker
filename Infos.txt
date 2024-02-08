@@ -1,0 +1,4 @@
+Plätze auf (Android / iPhone) Chrome angezeigt worden,
+auf Safari hingegen nicht.
+
+Block war nicht farblich markiert, nur der Sitzplatz
