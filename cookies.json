@@ -1,50 +1,41 @@
 [
   {
+    "domain": ".bayer04.de",
+    "httpOnly": false,
+    "name": "wt_rla",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "969665527401678%2C6%2C1710957624802"
+  },
+  {
+    "domain": "www.bayer04.de",
+    "expiry": 1711044040,
+    "httpOnly": false,
+    "name": "QueueITAccepted-SDFrts345E-V3_b04tickets20240320",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "EventId%3Db04tickets20240320%26QueueId%3D1ec32edb-4273-4a42-82f9-31b3a854ac5b%26RedirectType%3Dsafetynet%26IssueTime%3D1710957641%26Hash%3D72e1632ea38b66839fc8bdb8c5f970bac3d6e89eed676ff5f31e93ee414ee157"
+  },
+  {
     "domain": "www.bayer04.de",
     "httpOnly": false,
     "name": "group",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "0e4e09c83a9dfd39b275d3ccb55532eeffb7e666a70151215b4c55c6268d7d72"
+    "value": "9e738b589284aba3087745ad7b9d64fb"
   },
   {
     "domain": "www.bayer04.de",
-    "expiry": 1707423734,
+    "expiry": 1742493642,
     "httpOnly": false,
-    "name": "QueueITAccepted-SDFrts345E-V3_b04tickets20240131",
+    "name": "_pc_vis",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "EventId%3Db04tickets20240131%26QueueId%3D295f42cf-2177-4f00-a59e-197c9a195cc6%26RedirectType%3Dsafetynet%26IssueTime%3D1707337333%26Hash%3Ddf5a0af7f42d09f845b46e78cd04789363d2ec58020f65ee44cba5903bc346a7"
-  },
-  {
-    "domain": "www.bayer04.de",
-    "expiry": 1707423657,
-    "httpOnly": true,
-    "name": "sessionid",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": true,
-    "value": "tbh9qwti9quf99ctvczh09mfd13oot5i"
-  },
-  {
-    "domain": ".bayer04.de",
-    "httpOnly": false,
-    "name": "q_i_t_u_i",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": true,
-    "value": "referrer_https%3A%2F%2Fstaytuned.bayer04.de%2Fsoftblock%2F%3Fc%3Dbayer04%26e%3Db04tickets20240131%26t%3Dhttps%253A%252F%252Fwww.bayer04.de%252Fde-de%252Fshop%252Ftickets%26cid%3Dde-DE%26rticr%3D0~cookiedomain_bayer04.de"
-  },
-  {
-    "domain": "www.bayer04.de",
-    "httpOnly": false,
-    "name": "_pc_ses",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": false,
-    "value": "1707337240293"
+    "value": "5dca3999f0d13f53"
   },
   {
     "domain": "www.bayer04.de",
@@ -53,25 +44,34 @@
     "path": "/",
     "sameSite": "None",
     "secure": true,
-    "value": "1enm5r3punk3gt5kvc8o828jo7"
+    "value": "jputnbdqolsf7f3j4hjtsjqcki"
   },
   {
     "domain": "www.bayer04.de",
-    "expiry": 1738873259,
+    "expiry": 1711044040,
+    "httpOnly": true,
+    "name": "sessionid",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": true,
+    "value": "fc600xiojc9kwtpxic4bknhputy8nqr0"
+  },
+  {
+    "domain": "www.bayer04.de",
     "httpOnly": false,
-    "name": "_pc_vis",
+    "name": "_pc_ses",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "426ace5ab5cbfd3f"
+    "value": "1710957624193"
   },
   {
     "domain": ".bayer04.de",
     "httpOnly": false,
-    "name": "wt_rla",
+    "name": "q_i_t_u_i",
     "path": "/",
     "sameSite": "Lax",
-    "secure": false,
-    "value": "969665527401678%2C3%2C1707337242834"
+    "secure": true,
+    "value": "referrer_https%3A%2F%2Fstaytuned.bayer04.de%2Fsoftblock%2F%3Fc%3Dbayer04%26e%3Db04tickets20240320%26t%3Dhttps%253A%252F%252Fwww.bayer04.de%252Fde-de%252Fshop%252Ftickets%26cid%3Dde-DE%26rticr%3D3~cookiedomain_bayer04.de"
   }
 ]

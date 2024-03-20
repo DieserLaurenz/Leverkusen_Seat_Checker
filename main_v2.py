@@ -22,10 +22,10 @@ from seleniumbase import Driver
 REQUEST_DELAY = 5
 bot_token = "6602448853:AAFVqBmsIes9h0cC3YINOVIGxWiBrLBjDmo"
 chat_id = "-4153744196"
-product_id = 20123412
-event_id = 1977  # Bayern Spiel
-username = None
-password = None
+product_id = 20123417
+event_id = 1983  # Bayern Spiel
+username = "alexhintz111@gmail.com"
+password = "%VxyS#noa8hxb9o"
 headers_path = "headers.json"
 
 # Es geht auch einfach nur nach event_id fetchen ohne block
@@ -220,7 +220,7 @@ def fetch_new_headers():
 def fetch_new_headers_v2():
     while True:
         try:
-            driver = webdriver.Chrome()
+            driver = Driver(uc=True)
             driver.implicitly_wait(10)
             while True:
                 driver.get('https://www.bayer04.de/de-de/shop/tickets')
@@ -267,6 +267,9 @@ def fetch_new_headers_v2():
 
             driver.get('https://login.bayer04.de/login')
             username_input = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "input-username")))
+
+            print("Reached login page")
+
             for char in username:
                 username_input.send_keys(char)
                 time.sleep(0.2)
@@ -282,9 +285,12 @@ def fetch_new_headers_v2():
 
             time.sleep(1)
 
+            print("Logged in")
+
             previous_auth_apf = None
             previous_auth_tws = None
             while True:
+                print("Fetching new headers")
                 driver.get('https://www.bayer04.de/de-de/shop/user/')
                 time.sleep(2)
                 pre_element = driver.find_element(By.TAG_NAME, "pre")
@@ -403,7 +409,7 @@ def check_seats():
                     send_telegram_message(bot_token, chat_id,
                                           f"Unexpected status code: {status_code}. Laurenz kontaktieren", 'Markdown')
                     time.sleep(6000)
-                time.sleep(0.1)
+                time.sleep(0.001)
             print("Request delay..")
             time.sleep(REQUEST_DELAY)
         except Exception as e:
